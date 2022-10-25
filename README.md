@@ -45,3 +45,12 @@ if (millis() >= previousMillis + interval){
 [Functionality Video](https://youtu.be/Mvy08pWvHFI)
 
 
+Exercise 2
+---
+
+**Task:** Fading a LED with the potentiometer.
+
+**What I did**
+[![Setup Picture](https://i.postimg.cc/kG8d1wPh/hw1-2.jpg)](https://postimg.cc/4HJMn6dz)
+[Functionality Video](https://youtube.com/shorts/yT9gC4pJmiY?feature=share)
+
