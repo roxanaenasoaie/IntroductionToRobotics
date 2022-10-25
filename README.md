@@ -4,6 +4,23 @@ Laboratory homework for the Introduction to Robotics course(3rd year @ Faculty o
 
 ## Homework #1
 
+Assignment
+---
+**Task:** Use a separate potentiometer in controlling each of the
+color of the RGB led (Red, Green and Blue). The control must be done
+with digital electronics.
+
+**How?** We're gonna connect each of the 3 potentiometers to 3 pins (I chose A0, A1, A2) and each of the RGB colors to 3 pins (I chose 11, 10, 9).
+Using Arduino, we read the value of each potentiometer and pass it to the corresponding color in the RGB Led.
+
+**What I did**
+
+[![Setup Picture](https://i.postimg.cc/J01bPrgy/assignment.jpg)](https://postimg.cc/KkHkY2mF)
+
+[Functionality Video](https://youtube.com/shorts/4djHFnrXhTU?feature=share)
+
+
+
 Exercise 1
 ---
 **Task:** Make a blinking LED *without using* delay() function.
