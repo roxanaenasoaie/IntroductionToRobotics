@@ -26,22 +26,24 @@ The other advantage with millis() is that it won’t prevent us from running cod
 
 With delay():
 
-...
+```
 delay(1000);
 digitalWrite(ledPin, LOW);
-...
+```
 
 With millis():
 
-...
+```
 if (millis() >= previousMillis + interval){
     previousMillis += interval;
     digitalWrite(ledPin, LOW);
   }
-...
+```
 
 **What I did**
+
 [![Setup Picture](https://i.postimg.cc/zGJx63Fz/hw1-1.jpg)](https://postimg.cc/vcN76YKk)
+
 [Functionality Video](https://youtu.be/Mvy08pWvHFI)
 
 
