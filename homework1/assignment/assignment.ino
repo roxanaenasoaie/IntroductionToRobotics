@@ -16,29 +16,34 @@ int blueLedValue = 0;
 
 void setup() {
   pinMode(redPotentiometerPin, INPUT);
-  pinMode(greenPotentiometerPin, INPUT);
+  // pinMode(greenPotentiometerPin, INPUT);
   pinMode(bluePotentiometerPin, INPUT);
 
   pinMode(redLedPin, OUTPUT);
-  pinMode(greenLedPin, OUTPUT);
+  // pinMode(greenLedPin, OUTPUT);
   pinMode(blueLedPin, OUTPUT);
 }
 
 void loop() {
   redPotentiometerValue = analogRead(redPotentiometerPin);
+  redPotentiometerValue = map(redPotentiometerValue, 0, 1023, 0, 255);
   redLedValue = redPotentiometerValue;
 
-  greenPotentiometerValue = analogRead(greenPotentiometerPin);
-  greenLedValue = greenPotentiometerValue;
+  // greenPotentiometerValue = analogRead(greenPotentiometerPin);
+  // greenPotentiometerValue = map(greenPotentiometerValue, 0, 1023, 0, 255);
+  // greenLedValue = greenPotentiometerValue;
+  
 
   bluePotentiometerValue = analogRead(bluePotentiometerPin);
+  bluePotentiometerValue = map(bluePotentiometerValue, 0, 1023, 0, 255);
   blueLedValue = bluePotentiometerValue;
+ 
 
   setColor(redLedValue, greenLedValue, blueLedValue);
 }
 
 void setColor(int redValue, int greenValue, int blueValue){
   analogWrite(redLedPin, redValue);
-  analogWrite(greenLedPin, greenValue);
+  // analogWrite(greenLedPin, greenValue);
   analogWrite(blueLedPin, blueValue);
 }
