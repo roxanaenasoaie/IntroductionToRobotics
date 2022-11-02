@@ -15,35 +15,35 @@ int greenLedValue = 0;
 int blueLedValue = 0;
 
 void setup() {
-  pinMode(redPotentiometerPin, INPUT);
-  // pinMode(greenPotentiometerPin, INPUT);
-  pinMode(bluePotentiometerPin, INPUT);
+  // pinMode(redPotentiometerPin, INPUT);
+  pinMode(greenPotentiometerPin, INPUT);
+  // pinMode(bluePotentiometerPin, INPUT);
 
-  pinMode(redLedPin, OUTPUT);
-  // pinMode(greenLedPin, OUTPUT);
-  pinMode(blueLedPin, OUTPUT);
+  // pinMode(redLedPin, OUTPUT);
+  pinMode(greenLedPin, OUTPUT);
+  // pinMode(blueLedPin, OUTPUT);
 }
 
 void loop() {
-  redPotentiometerValue = analogRead(redPotentiometerPin);
-  redPotentiometerValue = map(redPotentiometerValue, 0, 1023, 0, 255);
-  redLedValue = redPotentiometerValue;
+  // redPotentiometerValue = analogRead(redPotentiometerPin);
+  // redPotentiometerValue = map(redPotentiometerValue, 0, 1023, 0, 255);
+  // redLedValue = redPotentiometerValue;
 
-  // greenPotentiometerValue = analogRead(greenPotentiometerPin);
-  // greenPotentiometerValue = map(greenPotentiometerValue, 0, 1023, 0, 255);
-  // greenLedValue = greenPotentiometerValue;
-  
+  greenPotentiometerValue = analogRead(greenPotentiometerPin);
+  greenPotentiometerValue = map(greenPotentiometerValue, 0, 1023, 0, 255);
+  greenLedValue = greenPotentiometerValue;
+  analogWrite(greenLedPin, greenLedValue);
 
-  bluePotentiometerValue = analogRead(bluePotentiometerPin);
-  bluePotentiometerValue = map(bluePotentiometerValue, 0, 1023, 0, 255);
-  blueLedValue = bluePotentiometerValue;
+  // bluePotentiometerValue = analogRead(bluePotentiometerPin);
+  // bluePotentiometerValue = map(bluePotentiometerValue, 0, 1023, 0, 255);
+  // blueLedValue = bluePotentiometerValue;
  
 
-  setColor(redLedValue, greenLedValue, blueLedValue);
+  // setColor(redLedValue, greenLedValue, blueLedValue);
 }
 
-void setColor(int redValue, int greenValue, int blueValue){
-  analogWrite(redLedPin, redValue);
-  // analogWrite(greenLedPin, greenValue);
-  analogWrite(blueLedPin, blueValue);
-}
+// void setColor(int redValue, int greenValue, int blueValue){
+//   analogWrite(redLedPin, redValue);
+//   // analogWrite(greenLedPin, greenValue);
+//   analogWrite(blueLedPin, blueValue);
+// }
