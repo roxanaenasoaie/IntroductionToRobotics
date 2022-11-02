@@ -4,7 +4,7 @@ Laboratory homework for the Introduction to Robotics course(3rd year @ Faculty o
 
 <details>
 
-<summary>## Homework #1</summary>
+<summary>Homework #1</summary>
 
 Assignment
 ---
@@ -79,7 +79,8 @@ Exercise 2
 </details>
 
 
-## Homework #2
+<details>
+<summary>Homework #2</summary>
 ---
 **Task**: Building the traffic lights for a crosswalk. To use: 2 LEDs to represent the traffic lights for people (red and green)and 3 LEDs to represent the traffic lights for cars (red, yellow and green).
 The system has the following states:
@@ -93,3 +94,4 @@ The system has the following states:
 [![Setup Picture](https://i.postimg.cc/QxxZPGjS/hw2.jpg)](https://postimg.cc/hhwYzYz7)
 
 [Functionality Video](https://youtu.be/-LcT8adIUzk)
+</details>
