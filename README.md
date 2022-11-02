@@ -76,12 +76,16 @@ Exercise 2
 [![Setup Picture](https://i.postimg.cc/kG8d1wPh/hw1-2.jpg)](https://postimg.cc/4HJMn6dz)
 
 [Functionality Video](https://youtube.com/shorts/yT9gC4pJmiY?feature=share)
+
 </details>
 
 
 <details>
+
 <summary>Homework #2</summary>
+
 ---
+
 **Task**: Building the traffic lights for a crosswalk. To use: 2 LEDs to represent the traffic lights for people (red and green)and 3 LEDs to represent the traffic lights for cars (red, yellow and green).
 The system has the following states:
 1. State 1(default, reinstated after state 4 ends): green light for cars, red light for people,no sounds. Duration: indefinite, changed bypressing the button.
@@ -94,4 +98,5 @@ The system has the following states:
 [![Setup Picture](https://i.postimg.cc/QxxZPGjS/hw2.jpg)](https://postimg.cc/hhwYzYz7)
 
 [Functionality Video](https://youtu.be/-LcT8adIUzk)
+
 </details>
