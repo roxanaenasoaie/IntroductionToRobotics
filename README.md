@@ -2,7 +2,9 @@
 
 Laboratory homework for the Introduction to Robotics course(3rd year @ Faculty of Matchematics and Computer Science, University of Bucharest). Each of the next homeworks will include: requirements, implementation details, code and image files. 
 
-## Homework #1
+<details>
+
+<summary>## Homework #1</summary>
 
 Assignment
 ---
@@ -74,6 +76,8 @@ Exercise 2
 [![Setup Picture](https://i.postimg.cc/kG8d1wPh/hw1-2.jpg)](https://postimg.cc/4HJMn6dz)
 
 [Functionality Video](https://youtube.com/shorts/yT9gC4pJmiY?feature=share)
+</details>
+
 
 ## Homework #2
 ---
