@@ -118,3 +118,35 @@ The system has the following states:
 [Functionality Video](https://youtu.be/44QTKkxa96s)
 
 </details>
+
+<details>
+
+<summary>Homework #4</summary>
+
+---
+
+**Task:** Use the joystick to move through the 4 digit 7-segment displays digits, press the button to lock in on the current digit
+and use the other axis to increment or decrement the number. Keep the button pressed to reset all the digit values and the current position to the
+first digit in the first state.
+
+The system has the following states:
+1. First state: use a joystick axis to cycle through the 4 digits;
+using the other axis does nothing. A blinking decimal point shows
+the current digit position. When pressing the button, lock in on
+the selected digit and enter the second state.
+2. Second state: in this state, the decimal point stays always on, no
+longer blinking and you can no longer use the axis to cycle through
+the 4 digits. Instead, using the other axis, you can increment on
+decrement the number on the current digit IN HEX. Pressing the button again returns to the
+previous state. 
+3. Reset: toggled by long pressing the button only in the first state.
+When resetting, all the digits go back to 0 and the current position
+is set to the first (rightmost) digit, in the first state.
+
+**What I did**
+
+[![Setup Picture](https://i.postimg.cc/d1yjbm29/hw4.jpg)](https://postimg.cc/R6vtftb3)
+
+[Functionality Video](https://youtube.com/shorts/fYbnFPj7W4k?feature=share)
+
+</details>
