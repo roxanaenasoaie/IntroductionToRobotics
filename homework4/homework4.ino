@@ -74,6 +74,8 @@ int currentState = 1;
 int currentDisplay = 0;
 
 void setup() {
+  pinMode(pinX, INPUT);
+  pinMode(pinY, INPUT);
   pinMode(pinSw, INPUT_PULLUP);
 
   pinMode(latchPin, OUTPUT);
