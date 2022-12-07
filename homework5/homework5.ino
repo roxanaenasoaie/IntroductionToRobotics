@@ -23,7 +23,7 @@ const String menuOptions[5] = {
 const String settingsOptions[4] = {
   "Player name",
   "LCD bright.",
-  "Difficulty",
+
 };
 
 
@@ -65,7 +65,6 @@ int settingsPos = 0;
 char* mess = "Roxana Enasoaie. github: @roxanaenasoaie";
 const byte moveInterval = 100;
 int LCDbrightness = 0;
-int difficulty = 1;
 
 byte blink = LOW;
 unsigned long lastBlinkL = 0;
@@ -77,6 +76,7 @@ String highscoreNames[5] = { "", "", "", "", "" };
 
 
 void blinking() {
+
   if (state == 3 && settings == 1 && settingsPos == 0) {
     if (millis() - lastBlinkL > 400) {
       lastBlinkL = millis();
@@ -112,9 +112,7 @@ void button() {
         } else if (subMenuOption == 1) {
           lcd.clear();
           lcd.print("PLAYER: ");
-          lcd.print(nameLetters[0]);
-          lcd.print(nameLetters[1]);
-          lcd.print(nameLetters[2]);
+          lcd.print(name);
           lcd.setCursor(0, 1);
           lcd.print("SCORE: ");
           lcd.print(score);
@@ -137,15 +135,15 @@ void button() {
 // memory layout:
 // 2 - LCD brightness
 // 3 - First highscore
-// 4 -> 7 - First highscore name
-// 8 - Second highscore
-// 9 -> 12 - Second highscore name
-// 13 - Third highscore
-// 14 -> 17 - Third highscore name
-// 18 - Fourth highscore
-// 19 -> 22 - Fourth highscore name
-// 23 - Fifth highscore
-// 24 -> 27 - Fifth highscore name
+// 4 -> 9 - First highscore name
+// 10 - Second highscore
+// 11 -> 16 - Second highscore name
+// 17 - Third highscore
+// 18 -> 23 - Third highscore name
+// 24 - Fourth highscore
+// 25 -> 30 - Fourth highscore name
+// 31 - Fifth highscore
+// 32 -> 37 - Fifth highscore name
 
 
 void startingHighscore() {
@@ -160,81 +158,50 @@ void startingHighscore() {
 void updateHighscore(int newScore, String newName) {
 
   if (newScore > highscores[0]) {
-    EEPROM.update(23, EEPROM.read(18));
-    EEPROM.update(24, EEPROM.read(19));
-    EEPROM.update(25, EEPROM.read(20));
-    EEPROM.update(26, EEPROM.read(21));
+    EEPROM.update(31, EEPROM.read(24));
+    EEPROM.put(32, EEPROM.read(25));
 
-    EEPROM.update(18, EEPROM.read(13));
-    EEPROM.update(19, EEPROM.read(14));
-    EEPROM.update(20, EEPROM.read(15));
-    EEPROM.update(21, EEPROM.read(16));
+    EEPROM.update(24, EEPROM.read(17));
+    EEPROM.put(25, EEPROM.read(18));
 
-    EEPROM.update(13, EEPROM.read(8));
-    EEPROM.update(14, EEPROM.read(9));
-    EEPROM.update(15, EEPROM.read(10));
-    EEPROM.update(16, EEPROM.read(11));
+    EEPROM.update(17, EEPROM.read(10));
+    EEPROM.put(18, EEPROM.read(11));
 
-    EEPROM.update(8, EEPROM.read(3));
-    EEPROM.update(9, EEPROM.read(4));
-    EEPROM.update(10, EEPROM.read(5));
-    EEPROM.update(11, EEPROM.read(6));
+    EEPROM.update(10, EEPROM.read(3));
+    EEPROM.put(11, EEPROM.read(4));
 
     EEPROM.update(3, newScore);
-    EEPROM.update(4, newName[0]);
-    EEPROM.update(5, newName[1]);
-    EEPROM.update(6, newName[2]);
-
+    EEPROM.put(4, newName);
   } else if (newScore > highscores[1]) {
-    EEPROM.update(23, EEPROM.read(18));
-    EEPROM.update(24, EEPROM.read(19));
-    EEPROM.update(25, EEPROM.read(20));
-    EEPROM.update(26, EEPROM.read(21));
+    EEPROM.update(31, EEPROM.read(24));
+    EEPROM.put(32, EEPROM.read(25));
 
-    EEPROM.update(18, EEPROM.read(13));
-    EEPROM.update(19, EEPROM.read(14));
-    EEPROM.update(20, EEPROM.read(15));
-    EEPROM.update(21, EEPROM.read(16));
+    EEPROM.update(24, EEPROM.read(17));
+    EEPROM.put(25, EEPROM.read(18));
 
-    EEPROM.update(13, EEPROM.read(8));
-    EEPROM.update(14, EEPROM.read(9));
-    EEPROM.update(15, EEPROM.read(10));
-    EEPROM.update(16, EEPROM.read(11));
+    EEPROM.update(17, EEPROM.read(10));
+    EEPROM.put(18, EEPROM.read(11));
 
-    EEPROM.update(8, newScore);
-    EEPROM.update(9, newName[0]);
-    EEPROM.update(10, newName[1]);
-    EEPROM.update(11, newName[2]);
+    EEPROM.update(10, newScore);
+    EEPROM.put(11, newName);
   } else if (newScore > highscores[2]) {
-    EEPROM.update(23, EEPROM.read(18));
-    EEPROM.update(24, EEPROM.read(19));
-    EEPROM.update(25, EEPROM.read(20));
-    EEPROM.update(26, EEPROM.read(21));
+    EEPROM.update(31, EEPROM.read(24));
+    EEPROM.put(32, EEPROM.read(25));
 
-    EEPROM.update(18, EEPROM.read(13));
-    EEPROM.update(19, EEPROM.read(14));
-    EEPROM.update(20, EEPROM.read(15));
-    EEPROM.update(21, EEPROM.read(16));
+    EEPROM.update(24, EEPROM.read(17));
+    EEPROM.put(25, EEPROM.read(18));
 
-    EEPROM.update(13, EEPROM.read(8));
-    EEPROM.update(14, EEPROM.read(9));
-    EEPROM.update(15, EEPROM.read(10));
-    EEPROM.update(16, EEPROM.read(11));
+    EEPROM.update(17, newScore);
+    EEPROM.put(18, newName);
   } else if (newScore > highscores[3]) {
-    EEPROM.update(23, EEPROM.read(18));
-    EEPROM.update(24, EEPROM.read(19));
-    EEPROM.update(25, EEPROM.read(20));
-    EEPROM.update(26, EEPROM.read(21));
+    EEPROM.update(31, EEPROM.read(24));
+    EEPROM.put(32, EEPROM.read(25));
 
-    EEPROM.update(20, newScore);
-    EEPROM.update(21, newName[0]);
-    EEPROM.update(22, newName[1]);
-    EEPROM.update(23, newName[2]);
+    EEPROM.update(24, newScore);
+    EEPROM.put(25, newName);
   } else if (newScore > highscores[4]) {
-    EEPROM.update(23, EEPROM.read(18));
-    EEPROM.update(24, EEPROM.read(19));
-    EEPROM.update(25, EEPROM.read(20));
-    EEPROM.update(26, EEPROM.read(21));
+    EEPROM.update(31, newScore);
+    EEPROM.put(32, newName);
   }
 }
 
@@ -242,14 +209,10 @@ void getData() {
   LCDbrightness = EEPROM.read(2);
 
   for (int i = 1; i <= 5; ++i) {
-    highscores[i - 1] = EEPROM.read(i * 5);
-    int firstLetter = EEPROM.read(i * 5 + 1);
-    int secondLetter = EEPROM.read(i * 5 + 2);
-    int thirdLetter = EEPROM.read(i * 5 + 3);
-    String name = "";
-    name += char(firstLetter);
-    name += char(secondLetter);
-    name += char(thirdLetter);
+    highscores[i - 1] = EEPROM.read(7 * i - 4);
+    String name;
+    int addr = 7 * i - 3;
+    EEPROM.get(addr, name);
     highscoreNames[i - 1] = name;
     Serial.print(highscores[i - 1]);
     Serial.print(" - ");
@@ -294,73 +257,80 @@ void upDown() {
     } else if (menuCurrentItem == 4) {
       lcd.clear();
       lcd.print("ABOUT");
-      int letter = 0;
-      while (letter <= strlen(mess) - 16) {
-        showLetters(0, letter, mess);
-        delay(300);
-        ++letter;
-      }
-    }
-    joyY = HIGH;
-  } else if (yValue < minThreshold && joyY == LOW && state == 2) {
-    state = 1;
-    leaderboardPos = 0;
-    subMenuOption = 0;
-    leaderboard = 0;
-    settingsPos = 0;
-    settings = 0;
-    lcd.clear();
-    lcd.print("MENU");
-    lcd.setCursor(0, 1);
-    lcd.print("->");
-    lcd.print(menuOptions[menuCurrentItem]);
-    joyY = HIGH;
-  } else if (yValue > maxThreshold && joyY == LOW && state == 2 && settings == 1) {
-    state = 3;
-    lcd.clear();
-    if (settingsPos == 0) {
-      lcd.print("NAME  Press to");
-      lcd.setCursor(0, 1);
-      lcd.print("    ");
-      lcd.print(nameLetters[0]);
-      lcd.print(nameLetters[1]);
-      lcd.print(nameLetters[2]);
-      lcd.print("     SAVE");
-    } else if (settingsPos == 1) {
-      lcd.print("LCD BRIGHT.");
-      lcd.setCursor(0, 1);
-      lcd.print("Level: ");
-      lcd.print(LCDbrightness);
-    }
-    joyY = HIGH;
-  } else if (yValue < minThreshold && joyY == LOW && state == 3 && settings == 1 and settingsPos != 0) {
-    state = 2;
-    lcd.clear();
-    lcd.print("SETTINGS");
-    lcd.setCursor(0, 1);
-    lcd.print("->");
-    lcd.print(settingsOptions[settingsPos]);
+      lcd.setCursor(1, 1);
+      lcd.print(mess);
 
-    joyY = HIGH;
-  } else if (yValue < minThreshold && joyY == LOW && state == 3 && settings == 1 and settingsPos == 0) {
-    if (namePos > 0) {
-      lcd.setCursor(namePos + 4, 1);
-      lcd.print(nameLetters[namePos]);
-      namePos--;
+      for (int PositionCount = 0; PositionCount < 13; PositionCount++) {
+        lcd.scrollDisplayLeft();
+        delay(150);
+
+        for (int PositionCount = 0; PositionCount < 29; PositionCount++) {
+          lcd.scrollDisplayRight();
+          delay(150);
+        }
+        for (int PositionCount = 0; PositionCount < 16; PositionCount++) {
+          lcd.scrollDisplayLeft();
+          delay(150);
+        }
+      }
+      joyY = HIGH;
+    } else if (yValue < minThreshold && joyY == LOW && state == 2) {
+      state = 1;
+      leaderboardPos = 0;
+      subMenuOption = 0;
+      leaderboard = 0;
+      settingsPos = 0;
+      settings = 0;
+      lcd.clear();
+      lcd.print("MENU ");
+      lcd.setCursor(0, 1);
+      lcd.print("->");
+      lcd.print(menuOptions[menuCurrentItem]);
+      joyY = HIGH;
+    } else if (yValue > maxThreshold && joyY == LOW && state == 2 && settings == 1) {
+      state = 3;
+      lcd.clear();
+      if (settingsPos == 0) {
+        lcd.print("NAME  Press to");
+        lcd.setCursor(0, 1);
+        lcd.print("    ");
+        lcd.print(name);
+        lcd.print("     SAVE");
+      } else if (settingsPos == 1) {
+        lcd.print("LCD BRIGHT.");
+        lcd.setCursor(0, 1);
+        lcd.print("Level: ");
+        lcd.print(LCDbrightness);
+      }
+      joyY = HIGH;
+    } else if (yValue < minThreshold && joyY == LOW && state == 3 && settings == 1 and settingsPos != 0) {
+      state = 2;
+      lcd.clear();
+      lcd.print("SETTINGS");
+      lcd.setCursor(0, 1);
+      lcd.print("->");
+      lcd.print(settingsOptions[settingsPos]);
+
+      joyY = HIGH;
+    } else if (yValue < minThreshold && joyY == LOW && state == 3 && settings == 1 and settingsPos == 0) {
+      if (namePos > 0) {
+        lcd.setCursor(namePos + 4, 1);
+        lcd.print(nameLetters[namePos]);
+        namePos--;
+      }
+      joyY = HIGH;
+    } else if (yValue > maxThreshold && joyY == LOW && state == 3 && settings == 1 and settingsPos == 0) {
+      if (namePos < 2) {
+        lcd.setCursor(namePos + 4, 1);
+        lcd.print(nameLetters[namePos]);
+        namePos++;
+      }
+      joyY = HIGH;
+    } else if (joyY == HIGH && yValue < maxThreshold && yValue > minThreshold) {
+      joyY = LOW;
     }
-    joyY = HIGH;
-  } else if (yValue > maxThreshold && joyY == LOW && state == 3 && settings == 1 and settingsPos == 0) {
-    if (namePos < 2) {
-      lcd.setCursor(namePos + 4, 1);
-      lcd.print(nameLetters[namePos]);
-      namePos++;
-    }
-    joyY = HIGH;
-  } else if (joyY == HIGH && yValue < maxThreshold && yValue > minThreshold) {
-    joyY = LOW;
   }
 }
-
 void leftRight() {
   if (xValue < minThreshold && joyX == LOW && state == 1 && leaderboard == 0) {
     if (menuCurrentItem < 4) {
@@ -448,16 +418,6 @@ void leftRight() {
         analogWrite(3, LCDbrightness * 51);
         EEPROM.update(1, LCDbrightness);
       }
-    } else if (settingsPos == 2) {
-      if (difficulty > 1) {
-        difficulty--;
-        lcd.setCursor(0, 1);
-        lcd.print("  ");
-        lcd.setCursor(0, 1);
-        lcd.print("Level: ");
-        lcd.print(difficulty);
-        EEPROM.update(3, difficulty);
-      }
     }
     joyX = HIGH;
   } else if (xValue > maxThreshold && joyX == LOW && state == 3 && settings == 1) {
@@ -484,19 +444,11 @@ void leftRight() {
   }
 }
 
-void showLetters(int printStart, int startLetter, char* message) {
-  lcd.setCursor(printStart, 1);
-  for (int letter = startLetter; letter <= startLetter + 15; letter++) {
-    lcd.print(message[letter]);
-  }
-  lcd.print(" ");
-}
 
 void setup() {
   startingHighscore();
 
   LCDbrightness = EEPROM.read(1);
-  difficulty = EEPROM.read(3);
 
   analogWrite(3, LCDbrightness * 51);
   pinMode(pinSW, INPUT_PULLUP);
