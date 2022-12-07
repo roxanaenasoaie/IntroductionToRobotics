@@ -150,3 +150,24 @@ is set to the first (rightmost) digit, in the first state.
 [Functionality Video](https://youtube.com/shorts/fYbnFPj7W4k?feature=share)
 
 </details>
+
+<details>
+
+<summary>Homework #5</summary>
+
+---
+
+**Task:** Create a menu for a game. It should scroll on the LCD with the joystick. The menu should include the following functionality:
+1.  When powering up a game, a greeting message should be shown fora few moments.
+2.  Should contain roughly the following categories:
+(a)Start game, starts the initial level of your game
+(b)Highscore: Initially, we have 0. –Update  it  when  the  game  is  done. 
+(c)Settings:–Enter name. The name should be shown in highscore.
+
+**What I did**
+
+[![Setup](https://i.postimg.cc/mrNF8bmg/hw5.jpg)](https://postimg.cc/t1JTgH0K)
+
+[Functionality Video](https://youtube.com/shorts/IHthmePmfMM?feature=share)
+
+</details>
