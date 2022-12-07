@@ -164,6 +164,7 @@ is set to the first (rightmost) digit, in the first state.
 (b)Highscore: Initially, we have 0. –Update  it  when  the  game  is  done. 
 (c)Settings:–Enter name. The name should be shown in highscore.
 
+**How to navigate**: Up and down move with joystick to move through the menu options. Move the joystick to the right to enter a submenu, move to the left to return.
 **What I did**
 
 [![Setup](https://i.postimg.cc/mrNF8bmg/hw5.jpg)](https://postimg.cc/t1JTgH0K)
